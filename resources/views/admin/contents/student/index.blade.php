@@ -13,7 +13,8 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-            <table class="table">
+          <a href="/admin/student/create" class="btn btn-primary mt-3">+ Student</a>
+            <table class="table mt-2">
                 <tr>
                     <th>No</th>
                     <th>Name</th>
@@ -24,14 +25,18 @@
                 </tr>
                 @foreach ($students as $student)
                 <tr>
-                    <td>{{ $loop -> iteration }}</td>
-                    <td>{{ $student -> name }}</td>
-                    <td>{{ $student -> nim }}</td>
-                    <td>{{ $student -> class }}</td>
-                    <td>{{ $student -> major }}</td>
-                    <td>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $student->name }}</td>
+                    <td>{{ $student->nim }}</td>
+                    <td>{{ $student->class }}</td>
+                    <td>{{ $student->major }}</td>
+                    <td class="d-flex">
+                        <a href="/admin/student/edit/{{ $student->id }}" class="btn btn-primary me-2">Edit</a>
+                        <form action="/admin/student/delete/{{ $student->id }}" method="post">
+                          @method('DELETE')
+                          @csrf
+                          <button class="btn btn-danger" type="submit" onclick="return confirm('Apakah Anda Yakin?')">Hapus</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

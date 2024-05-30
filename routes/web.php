@@ -1,23 +1,65 @@
 <?php
 
+use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\CoursesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-/**
+
+/** 
  * HTTP Method:
- * 1. Get: untuk menampilkan
- * 2. Post: untuk mengirim data
- * 3. Put: untuk update data
- * 4. Delete: untuk hapus data
- */
-//route untuk tampilkan teks salam
+ * 1. Get: Untuk Menampilkan
+ * 2. Post: Untuk Mengirim Data
+ * 3. Put: Untuk Meng-update Data
+ * 4. Delete: Untuk MEnghapus Data
+*/
+
+// Route Untuk Menampilkan Teks Salam
+Route::get('/salam', function(){
+    return "Assalamualaikum...";
+});
+
+Route::get('/profile', function(){
+    return view('profile');
+});
+
 Route::get('admin/dashboard', [DashboardController::class, 'index']);
+
 
 Route::get('admin/student', [StudentController::class, 'index']);
 
+
 Route::get('admin/courses', [CoursesController::class, 'index']);
+
+// Route untuk Menampilkan Form Tambah Student
+Route::get('admin/student/create', [StudentController::class, 'create']);
+
+// Route untuk Menampilkan Data Student Baru
+Route::post('admin/student/store', [StudentController::class, 'store']);
+
+// Route untuk Menampilkan Halaman Edit Student
+Route::get('admin/student/edit/{id}', [StudentController::class, 'edit']);
+
+// Route untuk Menyimpan Hasil Update Student
+Route::put('admin/student/update/{id}', [StudentController::class, 'update']);
+
+// Route untuk Menghapus Student
+Route::delete('admin/student/delete/{id}', [StudentController::class, 'destroy']);
+
+// Route untuk Menampilkan Form Tambah Courses
+Route::get('admin/courses/create', [CoursesController::class, 'create']);
+
+// Route untuk Menampilkan Data Courses Baru
+Route::post('admin/courses/store', [CoursesController::class, 'store']);
+
+// Route untuk Menampilkan Halaman Edit Courses
+Route::get('admin/courses/edit/{id}', [CoursesController::class, 'edit']);
+
+// Route untuk Menyimpan Hasil Update Courses
+Route::put('admin/courses/update/{id}', [CoursesController::class, 'update']);
+
+// Route untuk Menghapus Courses
+Route::delete('admin/courses/delete/{id}', [CoursesController::class, 'destroy']);
