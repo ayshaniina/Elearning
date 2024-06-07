@@ -26,14 +26,15 @@
                         <label for="category" class="form-label">Category</label>
                         <select name="category" id="category" class="form-select">
                             <option value="">Pilih Kategori</option>
-                            <option value="Math" {{ $courses->category == 'Math' ? 'selected' : '' }}>Math</option>
-                            <option value="English" {{ $courses->category == 'English' ? 'selected' : '' }}>English</option>
-                            <option value="Marketing" {{ $courses->category == 'Marketing' ? 'selected' : '' }}>Marketing</option>
+                            <option value="Pemasaran Digital" {{ $courses->category == 'Pemasaran Digital' ? 'selected' : '' }}>Pemasaran Digital</option>
+                            <option value="Bahasa" {{ $courses->category == 'Bahasa' ? 'selected' : '' }}>Bahasa</option>
+                            <option value="Keuangan" {{ $courses->category == 'Keuangan' ? 'selected' : '' }}>Keuangan</option>
                             <option value="Bussines" {{ $courses->category == 'Bussines' ? 'selected' : '' }}>Bussines</option>
                             <option value="Computer" {{ $courses->category == 'Computer' ? 'selected' : '' }}>Computer</option>
                             <option value="Cooking" {{ $courses->category == 'Cooking' ? 'selected' : '' }}>Cooking</option>
                             <option value="Music" {{ $courses->category == 'Music' ? 'selected' : '' }}>Music</option>
                             <option value="Art" {{ $courses->category == 'Art' ? 'selected' : '' }}>Art</option>
+                            <option value="Kecantikan" {{ $courses->category == 'Kecantikan' ? 'selected' : '' }}>Kecantikan</option>
                             <option value="Photography" {{ $courses->category == 'Photography' ? 'selected' : '' }}>Photography</option>
                         </select>
                     </div>

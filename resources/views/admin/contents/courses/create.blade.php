@@ -25,14 +25,15 @@
                         <label for="category" class="form-label">Category</label>
                         <select name="category" id="category" class="form-select">
                             <option value="">Pilih Kategori</option>
-                            <option value="Math">Math</option>
-                            <option value="English">English</option>
-                            <option value="Marketing">Marketing</option>
+                            <option value="Pemasaran Digital">Pemasaran Digital</option>
+                            <option value="Bahasa">Bahasa</option>
+                            <option value="Keuangan">Keuangan</option>
                             <option value="Bussines">Bussines</option>
                             <option value="Computer">Computer</option>
                             <option value="Cooking">Cooking</option>
                             <option value="Music">Music</option>
                             <option value="Art">Art</option>
+                            <option value="Kecantikan">Kecantikan</option>
                             <option value="Photography">Photography</option>
                         </select>
                     </div>
