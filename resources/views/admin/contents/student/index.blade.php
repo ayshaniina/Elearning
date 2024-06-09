@@ -31,7 +31,7 @@
                     <td>{{ $student->nim }}</td>
                     <td>{{ $student->class }}</td>
                     <td>{{ $student->major }}</td>
-                    <td>{{ $student->course->name }}</td>
+                    <td>{{ $student->course->name ?? 'tidak ada data'}}</td>
                     <td class="d-flex">
                         <a href="/admin/student/edit/{{ $student->id }}" class="btn btn-primary me-2">Edit</a>
                         <form action="/admin/student/delete/{{ $student->id }}" method="post">
