@@ -13,14 +13,18 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
+          @if (Auth::user()->role == 'admin')
           <a href="/admin/courses/create" class="btn btn-primary mt-3">+ Courses</a>
+          @endif
             <table class="table">
                 <tr>
                     <th>No</th>
                     <th>Name</th>
                     <th>Category</th>
                     <th>Description</th>
+                    @if (Auth::user()->role == 'admin')
                     <th>Action</th>
+                    @endif
                 </tr>
                 @foreach ($courses as $course)
                 <tr>

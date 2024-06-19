@@ -37,19 +37,19 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
-Route::get('admin/student', [StudentController::class, 'index']);
+Route::get('admin/student', [StudentController::class, 'index'])->middleware('admin');
 
 
-Route::get('admin/courses', [CoursesController::class, 'index']);
+Route::get('admin/courses', [CoursesController::class, 'index'])->middleware('admin');
 
 // Route untuk Menampilkan Form Tambah Student
-Route::get('admin/student/create', [StudentController::class, 'create']);
+Route::get('admin/student/create', [StudentController::class, 'create'])->middleware('admin');
 
 // Route untuk Menampilkan Data Student Baru
-Route::post('admin/student/store', [StudentController::class, 'store']);
+Route::post('admin/student/store', [StudentController::class, 'store'])->middleware('admin');
 
 // Route untuk Menampilkan Halaman Edit Student
-Route::get('admin/student/edit/{id}', [StudentController::class, 'edit']);
+Route::get('admin/student/edit/{id}', [StudentController::class, 'edit'])->middleware('admin');
 
 // Route untuk Menyimpan Hasil Update Student
 Route::put('admin/student/update/{id}', [StudentController::class, 'update']);
